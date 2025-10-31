@@ -1,0 +1,406 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações */
+body {
+    font-family: 'roboto', 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header e Navegação */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #155db1;
+    background: linear-gradient(135deg, #2196f3, #155db1);
+    background-clip: text;
+    color: transparent;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+#dark-mode {
+    background: none;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #155db1;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #2196f3, #155db1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.hero-content {
+    display: flex;
+    /* Organiza imagem e texto lado a lado */
+    align-items: center;
+    /* Alinha verticalmente */
+    gap: 30px;
+    /* Espaço entre imagem e texto */
+    max-width: 800px;
+    /* Limita a largura do conteúdo */
+    margin: 0 auto;
+    /* Centraliza o container */
+    text-align: left;
+    /* Alinha o texto à esquerda */
+}
+
+.hero-content img {
+    width: 200px;
+    /* Tamanho reduzido da imagem */
+    height: 200px;
+    /* Mantém proporção */
+    object-fit: cover;
+    /* Evita distorção */
+    border-radius: 50%;
+    /* Imagem circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra suave */
+}
+
+.hero-content img:hover {
+    transform: scale(1.1);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+
+.destaque {
+    color: #efb80f;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background: #efb80f;
+    color: #333;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Seções Gerais */
+section {
+    padding: 80px 5%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #155db1;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Sobre */
+.sobre-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+.skills ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.skills li {
+    background: #155db1;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+.skills li:hover {
+    transform: scale(1.1);
+}
+
+/* Projetos - GRID RESPONSIVO */
+.grid-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.projeto-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.projeto-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+/* Contato */
+.form-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-contato input,
+.form-contato textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-contato textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.form-contato input:focus,
+.form-contato textarea:focus {
+    border-color: #155db1;
+    outline: none;
+    box-shadow: 0 0 5px rgba(21, 93, 177, 0.3);
+}
+
+.form-contato label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #155db1;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+footer span {
+    margin: 0 0.5rem;
+}
+
+footer a {
+    color: #efb80f;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVO - MEDIA QUERIES */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 2rem 0;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .skills ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+        .hero-content img {
+            width: 120px;
+            height: 120px;
+        }
+    }
+
+    .grid-projetos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- DARK MODE ---------- */
+body.dark {
+    background: #1a1a1a;
+    color: #e0e0e0;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Navbar */
+body.dark .navbar {
+    background: rgba(30, 30, 30, 0.95);
+}
+
+/* Hero */
+body.dark .hero {
+    background: linear-gradient(135deg, #0d47a1, #1565c0);
+}
+
+/* Cards de projeto */
+body.dark .projeto-card {
+    background: #2d2d2d;
+    color: #e0e0e0;
+}
+
+/* Links do menu */
+body.dark .nav-menu a { color: #e0e0e0; }
+body.dark .nav-menu a:hover { color: #ffb300; }
+
+/* Botão Dark Mode */
+#dark-mode {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 0.4rem;
+}
+body.dark #dark-mode { content: "Sun"; }   /* opcional – troca o ícone */

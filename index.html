@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gutierrez Andrade</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Portfólio de Gutierrez Andrade, desenvolvedor web">
+    <meta name="keywords" content="desenvolvedor web, portfólio, frontend">
+    <meta name="author" content="Gutierrez Andrade">
+</head>
+
+<body>
+    <!-- Menu -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Gutierrez Andrade</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- BOTÃO DARK MODE -->
+            <button id="dark-mode" aria-label="Alternar modo escuro">🌙</button>
+        </nav>
+    </header>
+
+    <!-- Seção Home -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img class="hero-img" src="/minha-foto.jpeg" alt="Foto pessoal">
+            <h1>Olá, sou <span class="destaque">Gutierrez Andrade</span></h1>
+            <p>Desenvolvedor Web apaixonado por criar experiências incríveis</p>
+            <button class="btn" onclick="scrollToSection('sobre')">Saiba Mais</button>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="sobre">
+        <h2>Sobre Mim</h2>
+        <div class="container">
+            <div class="sobre-content">
+                <p>
+                    Coordenador de <strong>Departamento Pessoal</strong> com ampla experiência em
+                    <strong>gestão de pessoas e processos</strong>.
+                    Atualmente, estou expandindo meus horizontes na área de <strong>tecnologia</strong>,
+                    estudando <strong>HTML, CSS e JavaScript</strong> para aplicar minha visão analítica e de liderança
+                    também no
+                    <strong>desenvolvimento web</strong>.
+                    Tenho interesse especial em <strong>interfaces responsivas</strong> e experiências de usuário
+                    intuitivas.
+                </p>
+
+                <div class="skills">
+                    <h3>Habilidades</h3>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Design Responsivo</li>
+                        <li>Gestão de Pessoas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Seção Projetos -->
+    <section id="projetos" class="projetos">
+        <h2>Meus Projetos</h2>
+        <div class="container">
+            <div class="grid-projetos">
+                <div class="projeto-card">
+                    <img src="Imagens/calculadora.jpg" alt="Calculadora">
+                    <h3>Calculadora</h3>
+                    <p>Calculadora interativa com operações básicas</p>
+                    <a href="https://github.com/Gutierrez3003/calculadora" target="_blank" class="btn">Ver Projeto</a>
+                </div>
+                <div class="projeto-card">
+                    <h3>Lista de Tarefas</h3>
+                    <p>Lista de tarefas interativa</p>
+                </div>
+                <div class="projeto-card">
+                    <h3>Quiz Interativo</h3>
+                    <p>Quiz interativo</p>
+                </div>
+                <div class="projeto-card">
+                    <h3>Galeria de Fotos</h3>
+                    <p>Galeria interativa com filtros e modal</p>
+                </div>
+                <div class="projeto-card">
+                    <h3>Landing Page</h3>
+                    <p>Página promocional moderna</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="contato">
+        <h2>Entre em Contato</h2>
+        <div class="container">
+            <form class="form-contato">
+                <label for="nome">Nome:</label>
+                <input id="nome" name="nome" type="text" placeholder="Seu Nome" required>
+                <label for="email">Email:</label>
+                <input id="email" name="email" type="email" placeholder="Seu Email" required>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Sua Mensagem" required></textarea>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Gutierrez Andrade. Todos os direitos reservados.</p>
+        <a href="https://www.linkedin.com/in/gutierrez-andrade/" target="_blank">LinkedIn</a>
+        <span> - </span>
+        <a href="https://github.com/Gutierrez3003" target="_blank">GitHub</a>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
