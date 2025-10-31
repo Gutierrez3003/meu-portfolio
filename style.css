@@ -280,6 +280,24 @@ h2 {
     color: #155db1;
 }
 
+
+.botao-whatsapp {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #25D366;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.botao-whatsapp:hover {
+  background-color: #1ebc57;
+}
+
+
 /* Footer */
 footer {
     background: #333;
