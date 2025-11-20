@@ -52,13 +52,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 cards.forEach(card => observer.observe(card));
 
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    window.scrollTo({
-        top: section.offsetTop - 70, // Altura do menu
-        behavior: 'smooth'
-    });
-}
 
 /* ---------- DARK MODE ---------- */
 const darkBtn = document.getElementById('dark-mode');
@@ -76,4 +69,6 @@ darkBtn.addEventListener('click', () => {
 if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark');
     darkBtn.textContent = 'Sun';
-}ocument.body.classList.add('dark');
+} 
+document.body.classList.add('dark');
+darkBtn.textContent = isDark ? '☀️' : '🌙';
