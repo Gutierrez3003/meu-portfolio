@@ -7,12 +7,15 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-// Fechar menu ao clicar em um link
-document.querySelectorAll('.nav-menu a').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}));
+// Fecha o menu ao clicar em qualquer link
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
 
+// Fecha o menu ao clicar fora dele
 document.addEventListener('click', (e) => {
     if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
         hamburger.classList.remove('active');
@@ -20,31 +23,27 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Scroll suave para seções
+// Scroll suave (usado no botão "Saiba Mais")
 function scrollToSection(sectionId) {
-    document.getElementById(sectionId).scrollIntoView({
-        behavior: 'smooth'
-    });
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
 }
 
-// Formulário de Contato
-
-// ==== EMAILJS ====
+// ==== EMAILJS (já está funcionando com seus IDs) ====
 emailjs.init("u6gG1jLxDiorwM3vQ");
 
-document.getElementById('form-contato').addEventListener('submit', function(e) {
+document.getElementById('form-contato').addEventListener('submit', function (e) {
     e.preventDefault();
-    
+
     emailjs.sendForm('service_v4bdd8i', 'template_lz3ppbb', this)
         .then(() => {
             alert('Mensagem enviada com sucesso! Entrarei em contato em breve ✅');
             this.reset();
         }, (error) => {
-            alert('Erro ao enviar: ' + error.text);
+            alert('Erro ao enviar: ' + (error.text || 'Tente novamente mais tarde'));
         });
 });
 
-// Animação dos cards de projeto ao fazer scroll
+// Animação dos cards ao entrar na tela
 const cards = document.querySelectorAll('.projeto-card');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -54,8 +53,8 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, { threshold: 0.1 });
-cards.forEach(card => observer.observe(card));
 
+cards.forEach(card => observer.observe(card));
 
 /* ---------- DARK MODE ---------- */
 const darkBtn = document.getElementById('dark-mode');
@@ -63,16 +62,16 @@ const darkBtn = document.getElementById('dark-mode');
 darkBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark');
     const isDark = document.body.classList.contains('dark');
+    
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
-
-    // troca ícone (opcional)
-    darkBtn.textContent = isDark ? 'Sun' : 'Moon';
+    darkBtn.textContent = isDark ? '☀️' : '🌙';   // emoji bonito
 });
 
-// Carrega tema salvo ao abrir a página
-if (localStorage.getItem('theme') === 'dark') {
+// Carrega o tema salvo ao abrir a página
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
     document.body.classList.add('dark');
-    darkBtn.textContent = 'Sun';
-} 
-document.body.classList.add('dark');
-darkBtn.textContent = isDark ? '☀️' : '🌙';
+    darkBtn.textContent = '☀️';
+} else {
+    darkBtn.textContent = '🌙';
+}
