@@ -29,15 +29,19 @@ function scrollToSection(sectionId) {
 
 // Formulário de Contato
 
-document.querySelector('.form-contato').addEventListener('submit', function(e) {
+// ==== EMAILJS ====
+emailjs.init("u6gG1jLxDiorwM3vQ");
+
+document.getElementById('form-contato').addEventListener('submit', function(e) {
     e.preventDefault();
-    const email = this.querySelector('input[type="email"]').value;
-    if (!email.includes('@')) {
-        alert('Por favor, insira um e-mail válido!');
-        return;
-    }
-    alert('Mensagem enviada com sucesso! ✅');
-    this.reset();
+    
+    emailjs.sendForm('service_v4bdd8i', 'template_lz3ppbb', this)
+        .then(() => {
+            alert('Mensagem enviada com sucesso! Entrarei em contato em breve ✅');
+            this.reset();
+        }, (error) => {
+            alert('Erro ao enviar: ' + error.text);
+        });
 });
 
 // Animação dos cards de projeto ao fazer scroll
