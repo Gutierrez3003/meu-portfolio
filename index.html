@@ -4,43 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gutierrez Andrade | Desenvolvedor Web</title>
+    <title>Gutierrez Andrade | Desenvolvedor Web Fullstack</title>
     <meta name="description"
-        content="Portfólio de Gutierrez Andrade - Desenvolvedor Web em formação. Projetos em HTML, CSS e JavaScript.">
-    <link rel="icon" href="Imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        content="Portfólio de Gutierrez Andrade - Desenvolvedor Web em transição de carreira. Projetos reais com HTML, CSS e JavaScript.">
+    <link rel="icon" href="https://gutierrez3003.github.io/favicon.ico" type="image/x-icon">
 
+    <!-- Fonte Roboto corrigida -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdn.emailjs.com">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <!-- Menu -->
     <header>
-        <nav class="navbar">
+        <nav class="navbar" aria-label="Menu principal">
             <div class="logo">Gutierrez Andrade</div>
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
+                <li><a href="#home" aria-current="true">Home</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#projetos">Projetos</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
-            <div class="hamburger">
+            <div class="hamburger" aria-label="Abrir menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <!-- BOTÃO DARK MODE -->
-            <button id="dark-mode" aria-label="Alternar modo escuro">🌙</button>
+            <button id="dark-mode" aria-label="Alternar tema escuro">
+                <span class="icon sun">☀️</span>
+                <span class="icon moon">🌙</span>
+            </button>
         </nav>
     </header>
 
     <!-- Seção Home -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <img class="hero-img" src="/minha-foto.jpeg" alt="Foto pessoal">
-            <h1>Olá, sou <span class="destaque">Gutierrez Andrade</span></h1>
-            <p>Desenvolvedor Web apaixonado por criar experiências incríveis</p>
-            <button class="btn" onclick="scrollToSection('sobre')">Saiba Mais</button>
+            <img class="hero-img" src="./img/minha-foto.jpeg" alt="Foto de Gutierrez Andrade">
+            <div class="hero-text">
+                <h1>Olá, sou <span class="destaque">Gutierrez Andrade</span></h1>
+                <p>Desenvolvedor Web apaixonado por criar experiências digitais incríveis</p>
+                <div class="hero-buttons">
+                    <button class="btn" onclick="scrollToSection('sobre')">Saiba Mais</button>
+                    <a href="./cv/Gutierrez-Andrade-CV.pdf" class="btn btn-secundario" download>Baixar CV</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -50,41 +60,51 @@
         <div class="container">
             <div class="sobre-content">
                 <p>
-                    Coordenador de <strong>Departamento Pessoal</strong> com ampla experiência em
-                    <strong>gestão de pessoas e processos</strong>.
-                    Atualmente, estou expandindo meus horizontes na área de <strong>tecnologia</strong>,
-                    estudando <strong>HTML, CSS e JavaScript</strong> para aplicar minha visão analítica e de liderança
-                    também no
-                    <strong>desenvolvimento web</strong>.
-                    Tenho interesse especial em <strong>interfaces responsivas</strong> e experiências de usuário
-                    intuitivas.
+                    Após anos liderando equipes e otimizando processos complexos no <strong>Departamento
+                        Pessoal</strong>,
+                    decidi migrar para a área que mais me apaixona: o <strong>desenvolvimento web</strong>.
+                </p>
+                <p>
+                    Hoje domino <strong>HTML5, CSS3 (Flexbox/Grid), JavaScript ES6+</strong> e construo projetos reais
+                    com foco em
+                    performance, acessibilidade e experiência do usuário.
+                </p>
+                <p>
+                    Minha experiência em liderança, resolução de problemas e gestão de prazos me dá uma vantagem única:
+                    entrego código limpo, bem documentado e entendo o impacto do meu trabalho no negócio.
                 </p>
 
                 <div class="skills">
                     <h3>Habilidades</h3>
                     <ul>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>JavaScript</li>
+                        <li>HTML5 Semântico</li>
+                        <li>CSS3 Avançado</li>
+                        <li>JavaScript Moderno</li>
                         <li>Design Responsivo</li>
-                        <li>Gestão de Pessoas</li>
+                        <li>Git & GitHub</li>
+                        <li>Acessibilidade (a11y)</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-
     <!-- Seção Projetos -->
     <section id="projetos" class="projetos">
         <h2>Meus Projetos</h2>
         <div class="container">
             <div class="grid-projetos">
+
                 <!-- Calculadora -->
                 <div class="projeto-card">
-                    <img src="Imagens/calculadora.jpg" alt="Calculadora">
+                    <img src="./img/calculadora.jpg" alt="Calculadora">
                     <h3>Calculadora</h3>
-                    <p>Calculadora interativa com operações básicas</p>
+                    <p>Calculadora interativa com operações básicas e design moderno</p>
+                    <div class="tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
                     <div class="botoes-projeto">
                         <a href="https://gutierrez3003.github.io/calculadora" target="_blank" class="btn">Ver Demo</a>
                         <a href="https://github.com/Gutierrez3003/calculadora" target="_blank"
@@ -94,9 +114,16 @@
 
                 <!-- Lista de Tarefas -->
                 <div class="projeto-card">
-                    <img src="Imagens/lista-tarefas.jpg" alt="Lista de Tarefas">
+                    <img src="https://raw.githubusercontent.com/Gutierrez3003/lista-tarefas/main/screenshot.png"
+                        alt="Lista de Tarefas">
                     <h3>Lista de Tarefas</h3>
-                    <p>Adiciona, marca e remove tarefas com localStorage</p>
+                    <p>Adiciona, marca e remove tarefas com persistência no localStorage</p>
+                    <div class="tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">localStorage</span>
+                    </div>
                     <div class="botoes-projeto">
                         <a href="https://gutierrez3003.github.io/lista-tarefas" target="_blank" class="btn">Ver Demo</a>
                         <a href="https://github.com/Gutierrez3003/lista-tarefas" target="_blank"
@@ -106,9 +133,14 @@
 
                 <!-- Quiz Interativo -->
                 <div class="projeto-card">
-                    <img src="Imagens/quiz.jpg" alt="Quiz Interativo">
+                    <img src="./img/projetos/quiz.jpg" alt="Quiz Interativo">
                     <h3>Quiz Interativo</h3>
                     <p>Quiz de múltipla escolha com pontuação em tempo real</p>
+                    <div class="tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
                     <div class="botoes-projeto">
                         <a href="https://gutierrez3003.github.io/quiz" target="_blank" class="btn">Ver Demo</a>
                         <a href="https://github.com/Gutierrez3003/quiz" target="_blank"
@@ -118,9 +150,14 @@
 
                 <!-- Galeria de Fotos -->
                 <div class="projeto-card">
-                    <img src="Imagens/galeria.jpg" alt="Galeria de Fotos">
+                    <img src="./img/projetos/galeria.jpg" alt="Galeria de Fotos">
                     <h3>Galeria de Fotos</h3>
-                    <p>Galeria responsiva com filtro por categoria e modal</p>
+                    <p>Galeria responsiva com filtro por categoria e lightbox</p>
+                    <div class="tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
                     <div class="botoes-projeto">
                         <a href="https://gutierrez3003.github.io/galeria-fotos" target="_blank" class="btn">Ver Demo</a>
                         <a href="https://github.com/Gutierrez3003/galeria-fotos" target="_blank"
@@ -130,9 +167,14 @@
 
                 <!-- Caminhando com Jesus -->
                 <div class="projeto-card">
-                    <img src="Imagens/caminhando-jesus.jpg" alt="Caminhando com Jesus">
+                    <img src="./img/projetos/caminhando-com-jesus.jpg" alt="Caminhando com Jesus">
                     <h3>Caminhando com Jesus</h3>
-                    <p>Landing page devocional com versículos e reflexões</p>
+                    <p>Landing page devocional com versículos diários e reflexões</p>
+                    <div class="tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Responsivo</span>
+                    </div>
                     <div class="botoes-projeto">
                         <a href="https://gutierrez3003.github.io/caminhando-com-jesus" target="_blank" class="btn">Ver
                             Demo</a>
@@ -149,19 +191,23 @@
         <h2>Entre em Contato</h2>
         <div class="container">
             <form id="form-contato" class="form-contato">
-                <label for="nome">Nome:</label>
+                <label for="nome">Nome completo:</label>
                 <input id="nome" name="nome" type="text" placeholder="Seu Nome" required>
-                <label for="email">Email:</label>
-                <input id="email" name="email" type="email" placeholder="Seu Email" required>
+
+                <label for="email">E-mail:</label>
+                <input id="email" name="email" type="email" placeholder="seu@email.com" required>
+
                 <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" placeholder="Sua Mensagem" required></textarea>
-                <button type="submit" class="btn">Enviar</button>
+                <textarea id="mensagem" name="mensagem" placeholder="Olá Gutierrez, gostei muito do seu portfólio..."
+                    required></textarea>
+
+                <button type="submit" class="btn">Enviar Mensagem</button>
             </form>
 
             <div class="contato-links">
                 <a href="https://wa.me/5532991369158?text=Olá%2C%20vim%20pelo%20seu%20portfólio!" target="_blank"
                     class="botao-whatsapp">
-                    💬 Falar no WhatsApp
+                    Chat no WhatsApp
                 </a>
             </div>
         </div>
@@ -169,14 +215,15 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Gutierrez Andrade. Todos os direitos reservados.</p>
-        <a href="https://www.linkedin.com/in/gutierrez-andrade/" target="_blank">LinkedIn</a>
-        <span> - </span>
-        <a href="https://github.com/Gutierrez3003" target="_blank">GitHub</a>
-
+        <p>© 2025 Gutierrez Andrade. Todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/gutierrez-andrade/" target="_blank">LinkedIn</a>
+            <span> • </span>
+            <a href="https://github.com/Gutierrez3003" target="_blank">GitHub</a>
+        </div>
     </footer>
 
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.11.0/email.min.js"></script>
+    <script src="https://cdn.emailjs.com/sdk/3.11.0/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 

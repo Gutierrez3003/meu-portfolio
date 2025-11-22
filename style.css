@@ -226,10 +226,17 @@ h2 {
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, opacity 0.6s ease-out, box-shadow 0.3s;
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+/* Só aplica a animação de entrada via JS */
+.projeto-card.animate-in {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s, transform 0.5s;
+    transform: translateY(30px);
 }
 
 .projeto-card:hover {
@@ -252,11 +259,34 @@ h2 {
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .btn-secundario {
     background: transparent;
     border: 2px solid #efb80f;
     color: #efb80f;
 }
+
+.btn-secundario:hover {
+    background: #efb80f;
+    color: #333;
+}
+
+
+/* Botões dos projetos */
+.botoes-projeto {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-secundario {
+    background: transparent;
+    border: 2px solid #efb80f;
+    color: #efb80f;
+}
+
 .btn-secundario:hover {
     background: #efb80f;
     color: #333;
@@ -299,19 +329,19 @@ h2 {
 
 
 .botao-whatsapp {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #25D366;
-  color: white;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.3s ease;
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #25D366;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s ease;
 }
 
 .botao-whatsapp:hover {
-  background-color: #1ebc57;
+    background-color: #1ebc57;
 }
 
 
@@ -337,17 +367,35 @@ footer a:hover {
     text-decoration: underline;
 }
 
-.hero-content h1, .hero-content p, .hero-content .btn {
+.hero-content h1,
+.hero-content p,
+.hero-content .btn {
     opacity: 0;
     animation: fadeInUp 1s ease forwards;
 }
-.hero-content h1 { animation-delay: 0.3s; }
-.hero-content p { animation-delay: 0.6s; }
-.hero-content .btn { animation-delay: 0.9s; }
+
+.hero-content h1 {
+    animation-delay: 0.3s;
+}
+
+.hero-content p {
+    animation-delay: 0.6s;
+}
+
+.hero-content .btn {
+    animation-delay: 0.9s;
+}
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -405,48 +453,117 @@ footer a:hover {
         font-size: 1.5rem;
     }
 
-        .hero-content img {
-            width: 120px;
-            height: 120px;
-        }
+    .hero-content img {
+        width: 120px;
+        height: 120px;
+    }
 
     .grid-projetos {
         grid-template-columns: 1fr;
     }
 }
 
-/* ---------- DARK MODE ---------- */
-body.dark {
-    background: #1a1a1a;
-    color: #e0e0e0;
-    transition: background 0.3s, color 0.3s;
-}
-
-/* Navbar */
-body.dark .navbar {
-    background: rgba(30, 30, 30, 0.95);
-}
-
-/* Hero */
-body.dark .hero {
-    background: linear-gradient(135deg, #0d47a1, #1565c0);
-}
-
-/* Cards de projeto */
-body.dark .projeto-card {
-    background: #2d2d2d;
-    color: #e0e0e0;
-}
-
-/* Links do menu */
-body.dark .nav-menu a { color: #e0e0e0; }
-body.dark .nav-menu a:hover { color: #ffb300; }
-
-/* Botão Dark Mode */
+/* DARK MODE BUTTON — VERSÃO SIMPLES E QUE FUNCIONA 100% */
 #dark-mode {
     background: none;
     border: none;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     cursor: pointer;
-    padding: 0.4rem;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+#dark-mode:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#dark-mode .icon {
+    position: absolute;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+
+#dark-mode .sun {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+#dark-mode .moon {
+    opacity: 0;
+    transform: rotate(180deg) scale(0.8);
+}
+
+/* ==================== TEMA ESCURO — VERSÃO FINAL E QUE SEMPRE GANHA ==================== */
+body.dark {
+    background: #0f0f1a !important;
+    color: #e0e0e0 !important;
+    transition: background 0.4s ease, color 0.4s ease !important;
+}
+
+body.dark .navbar {
+    background: rgba(20, 20, 35, 0.95) !important;
+    backdrop-filter: blur(10px);
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #1e3a8a, #1e40af) !important;
+}
+
+body.dark .projeto-card {
+    background: #1f2937 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .nav-menu a {
+    color: #e0e0e0 !important;
+}
+
+body.dark .nav-menu a:hover {
+    color: #fbbf24 !important; /* amarelo dourado bonito */
+}
+
+body.dark .btn {
+    background: #fbbf24 !important;
+    color: #1f2937 !important;
+}
+
+body.dark .btn-secundario {
+    border-color: #fbbf24 !important;
+    color: #fbbf24 !important;
+}
+
+body.dark .btn-secundario:hover {
+    background: #fbbf24 !important;
+    color: #1f2937 !important;
+}
+
+body.dark .skills li {
+    background: #1e40af !important;
+}
+
+body.dark footer {
+    background: #111 !important;
+}
+
+body.dark .tag {
+    background: #fbbf24 !important;
+    color: #1f2937 !important;
+}
+
+/* Garante que textos fiquem claros */
+body.dark p,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark li {
+    color: #e0e0e0 !important;
 }
